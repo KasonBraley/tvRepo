@@ -1,0 +1,23 @@
+/* give credit to Sarah Creager in README.md for css help */
+
+/* .aboutus {
+
+} */
+
+#aboutushead {
+  text-align: center;
+}
+
+#authorcards {
+  display: flex;
+  justify-content: center;
+  margin: 50px;
+  border: 50px;
+  /* width: 950px; */
+}
+
+.aboutuscard {
+  margin-left: 15px;
+  margin-right: 15px;
+  /* width: 800px; */
+}
