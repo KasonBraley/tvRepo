@@ -1,41 +1,41 @@
-const UserModel = require("../models/UserSchema");
+const UserModel = require("../models/UserSchema")
 
-const NOT_LOGGED_IN_MESSAGE = "User is not logged in";
+const NOT_LOGGED_IN_MESSAGE = "User is not logged in"
 
 async function getUserShows(userId) {
-  if (!(await userIsLoggedIn(userId))) {
-    console.log(NOT_LOGGED_IN_MESSAGE);
-    return;
-  }
+    if (!(await userIsLoggedIn(userId))) {
+        console.log(NOT_LOGGED_IN_MESSAGE)
+        return
+    }
 
-  console.log(`Getting show data for user ${userId}`);
+    console.log(`Getting show data for user ${userId}`)
 
-  const userObject = await UserModel.findOne({
-    userEmail: normalizeString(userId),
-  });
+    const userObject = await UserModel.findOne({
+        userEmail: normalizeString(userId),
+    })
 
-  const userShowData = userObject.userShows;
+    const userShowData = userObject.userShows
 
-  return userShowData;
+    return userShowData
 }
 
 async function updateUserShows(userId, shows) {
-  if (!(await userIsLoggedIn(userId))) {
-    console.error(NOT_LOGGED_IN_MESSAGE);
-    return { error: "error", message: NOT_LOGGED_IN_MESSAGE };
-  }
+    if (!(await userIsLoggedIn(userId))) {
+        console.error(NOT_LOGGED_IN_MESSAGE)
+        return { error: "error", message: NOT_LOGGED_IN_MESSAGE }
+    }
 
-  const user = await UserModel.findOne({ userEmail: userId });
+    const user = await UserModel.findOne({ userEmail: userId })
 
-  if (!user) {
-    console.error("User is not valid");
-    return { error: "error", message: NOT_LOGGED_IN_MESSAGE };
-  }
+    if (!user) {
+        console.error("User is not valid")
+        return { error: "error", message: NOT_LOGGED_IN_MESSAGE }
+    }
 
-  user.userShows = shows;
-  await user.save();
+    user.userShows = shows
+    await user.save()
 
-  /*
+    /*
     const user = await UserModel.findOne({ userEmail: userId });
 
     if (!user) {
@@ -85,55 +85,55 @@ async function updateUserShows(userId, shows) {
 }
 
 async function createNewUser(email, password) {
-  await UserModel.findOneAndUpdate(
-    { userEmail: normalizeString(email) },
-    {
-      userEmail: normalizeString(email),
-      userPassword: password,
-      userIsLoggedIn: false,
-      userShows: [],
-    },
-    {
-      upsert: true,
-    },
-  );
+    await UserModel.findOneAndUpdate(
+        { userEmail: normalizeString(email) },
+        {
+            userEmail: normalizeString(email),
+            userPassword: password,
+            userIsLoggedIn: false,
+            userShows: [],
+        },
+        {
+            upsert: true,
+        }
+    )
 }
 
 async function authorizeUser(email) {
-  const user = await UserModel.findOne({ userEmail: normalizeString(email) });
+    const user = await UserModel.findOne({ userEmail: normalizeString(email) })
 
-  user.userIsLoggedIn = true;
+    user.userIsLoggedIn = true
 
-  await user.save();
+    await user.save()
 }
 
 async function deAuthorizeUser(email) {
-  const user = await UserModel.findOne({ userEmail: normalizeString(email) });
+    const user = await UserModel.findOne({ userEmail: normalizeString(email) })
 
-  user.userIsLoggedIn = false;
+    user.userIsLoggedIn = false
 
-  await user.save();
+    await user.save()
 }
 
 async function validateCredentials(userId) {
-  const user = await UserModel.find({ userEmail: normalizeString(userId) });
+    const user = await UserModel.find({ userEmail: normalizeString(userId) })
 
-  return user.length > 0;
+    return user.length > 0
 }
 
 async function userIsLoggedIn(userId) {
-  const user = await UserModel.findOne({ userEmail: normalizeString(userId) });
+    const user = await UserModel.findOne({ userEmail: normalizeString(userId) })
 
-  return user && user.userIsLoggedIn;
+    return user && user.userIsLoggedIn
 }
 
-const normalizeString = strIn => strIn.toLowerCase();
+const normalizeString = (strIn) => strIn.toLowerCase()
 
 module.exports = {
-  getUserShows,
-  updateUserShows,
-  validateCredentials,
-  createNewUser,
-  authorizeUser,
-  deAuthorizeUser,
-};
+    getUserShows,
+    updateUserShows,
+    validateCredentials,
+    createNewUser,
+    authorizeUser,
+    deAuthorizeUser,
+}

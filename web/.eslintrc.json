@@ -1,52 +1,29 @@
 {
-  "extends": ["eslint:recommended", "plugin:react/recommended"],
-  "parserOptions": {
-    "ecmaVersion": 6,
-    "sourceType": "module"
-  },
-  "env": {
-    "es6": true,
-    "jest": true,
-    "node": true
-  },
-  "rules": {
-    "eol-last": "error",
-    "eqeqeq": ["error", "always"],
-    "indent": ["warn", 2],
-    "new-cap": "warn",
-    "no-console": "off",
-    "no-multi-spaces": [
-      "warn",
-      {
-        "exceptions": {
-          "VariableDeclarator": true
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "plugin:react-hooks/recommended",
+        "plugin:@next/next/recommended",
+        "prettier"
+    ],
+    "parserOptions": {
+        "ecmaVersion": 12,
+        "sourceType": "module"
+    },
+    "env": {
+        "es6": true,
+        "jest": true,
+        "browser": true,
+        "node": true
+    },
+    "rules": {
+        "eqeqeq": ["error", "always"],
+        "react/prop-types": "off",
+        "react/react-in-jsx-scope": "off"
+    },
+    "settings": {
+        "react": {
+            "version": "detect"
         }
-      }
-    ],
-    "no-redeclare": [
-      "error",
-      {
-        "builtinGlobals": true
-      }
-    ],
-    "no-template-curly-in-string": "error",
-    "no-trailing-spaces": "warn",
-    "no-undefined": "off",
-    "quotes": [
-      "warn",
-      "double",
-      {
-        "allowTemplateLiterals": true
-      }
-    ],
-    "semi": "warn"
-  },
-  "overrides": [
-    {
-      "files": ["**/*.jsx"],
-      "rules": {
-        "react/prop-types": "off"
-      }
     }
-  ]
 }

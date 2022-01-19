@@ -1,112 +1,112 @@
 * {
-  font-family: "ABeeZee", sans-serif;
+    font-family: "ABeeZee", sans-serif;
 }
 
 .aboutuscard {
-  width: 18rem;
+    width: 18rem;
 }
 
 div.footer {
-  background-color: #badda6;
-  width: 100%;
-  position: fixed;
-  bottom: 0;
+    background-color: #badda6;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
 }
 
 div.header {
-  background-color: #badda6;
+    background-color: #badda6;
 }
 
 .nav-link {
-  font-size: 20px;
+    font-size: 20px;
 }
 
 nav.headernavbar {
-  display: flex;
-  justify-content: flex-end;
-  min-height: 100px;
+    display: flex;
+    justify-content: flex-end;
+    min-height: 100px;
 }
 
 nav.footernavbar {
-  display: flex;
-  justify-content: flex-end;
+    display: flex;
+    justify-content: flex-end;
 }
 
 div.home {
-  text-align: center;
-  min-height: 1000px;
+    text-align: center;
+    min-height: 1000px;
 }
 
 .welcome {
-  padding: 40px 0px;
-  font-size: 36pt;
-  color: #5f5f5f;
-	font-weight:900;
+    padding: 40px 0px;
+    font-size: 36pt;
+    color: #5f5f5f;
+    font-weight: 900;
 }
 
 .welcomedesc {
-  padding: 0px 20px;
-  font-size: 24px;
-  color: #5f5f5f;
+    padding: 0px 20px;
+    font-size: 24px;
+    color: #5f5f5f;
 }
 
 .search {
-	align-items: center;
+    align-items: center;
 }
 
 .searchform {
-  background-color: #e0e0e0;
-  border: thick #484538 solid;
-  border-radius: 10px;
-  width: 33rem;
-  padding: 14px;
-  margin: 50px;
-	align-items: center;
+    background-color: #e0e0e0;
+    border: thick #484538 solid;
+    border-radius: 10px;
+    width: 33rem;
+    padding: 14px;
+    margin: 50px;
+    align-items: center;
 }
 
 .searchresult {
-  display: flex;
-  overflow-y: scroll;
-  background-color: #484538;
-  height: 100rem;
-  margin-top: 10px;
-  margin-bottom: 40px;
+    display: flex;
+    overflow-y: scroll;
+    background-color: #484538;
+    height: 100rem;
+    margin-top: 10px;
+    margin-bottom: 40px;
 }
 
 .searchresultcard {
-  height: 700px;
-  margin: 10px;
+    height: 700px;
+    margin: 10px;
 }
 
 .showcard {
-  width: 17rem;
-  height: 700px;
-  margin: 10px;
+    width: 17rem;
+    height: 700px;
+    margin: 10px;
 }
 
 .hidescroll::-webkit-scrollbar {
-  width: 0 !important;
+    width: 0 !important;
 }
 
 .shows {
-  height: 100rem;
-  background-color: #484538;
-  overflow-y: scroll;
-  display: flex;
-  margin-bottom: 40px;
+    height: 100rem;
+    background-color: #484538;
+    overflow-y: scroll;
+    display: flex;
+    margin-bottom: 40px;
 }
 
 .noShowsParent {
-  background-color: #484538;
-  color: #e0e0e0;
-  display: flex;
-  justify-content: center;
-  margin-top: 100px;
-  width: 50rem;
-  height: 400px;
+    background-color: #484538;
+    color: #e0e0e0;
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+    width: 50rem;
+    height: 400px;
 }
 
 .noShowsChild {
-  margin: 20px;
-  height: 400px;
+    margin: 20px;
+    height: 400px;
 }

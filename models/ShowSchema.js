@@ -57,21 +57,21 @@
 }
  */
 
-const mongoose = require("mongoose");
+const mongoose = require("mongoose")
 
 const ShowSchema = new mongoose.Schema({
-  showTitle: { type: "String", required: true }, // derived from name
-  showDescription: { type: "String", required: false }, // derived from summary
-  showStatus: { type: "String", required: false }, // derived from status
-  showNextEpisode24HourTime: { type: "String", required: false }, // derived from schedule.time
-  showTimezone: { type: "String", required: false }, // derived from network.country.timezone
-  showNextEpisodeDayOfWeek: { type: "Array", required: false }, // derived from schedule.days[]
-  showNetwork: { type: "String", required: false }, // derived from network.name
-  showImageSmall: { type: "String", required: false }, // derived from image.medium
-  showImageLarge: { type: "String", required: false }, // derived from image.original
-});
+    showTitle: { type: "String", required: true }, // derived from name
+    showDescription: { type: "String", required: false }, // derived from summary
+    showStatus: { type: "String", required: false }, // derived from status
+    showNextEpisode24HourTime: { type: "String", required: false }, // derived from schedule.time
+    showTimezone: { type: "String", required: false }, // derived from network.country.timezone
+    showNextEpisodeDayOfWeek: { type: "Array", required: false }, // derived from schedule.days[]
+    showNetwork: { type: "String", required: false }, // derived from network.name
+    showImageSmall: { type: "String", required: false }, // derived from image.medium
+    showImageLarge: { type: "String", required: false }, // derived from image.original
+})
 
 module.exports = {
-  Show: mongoose.model("Show", ShowSchema),
-  ShowSchema,
-};
+    Show: mongoose.model("Show", ShowSchema),
+    ShowSchema,
+}
