@@ -1,9 +1,7 @@
 import parse from "html-react-parser"
-import React from "react"
 import { Button, Card } from "react-bootstrap"
-import { withRouter } from "react-router-dom"
 
-function SearchResultCard(props) {
+export default function SearchResultCard(props) {
     return (
         <Card className="searchresultcard">
             <Card.Img variant="top" src={props.tvShow.showImageSmall} />
@@ -30,5 +28,3 @@ function SearchResultCard(props) {
         </Card>
     )
 }
-
-export default withRouter(SearchResultCard)

@@ -1,9 +1,7 @@
 import axios from "axios"
-import React from "react"
 import { Button, Col, Form, Modal, Row } from "react-bootstrap"
-import { withRouter } from "react-router-dom"
 
-function Login(props) {
+export default function Login(props) {
     async function processLogin(event) {
         event.preventDefault()
 
@@ -26,8 +24,8 @@ function Login(props) {
     function navigateBack() {
         props.history.goBack()
     }
-    
- function navigateToHomePage() {
+
+    function navigateToHomePage() {
         props.history.push("/")
     }
 
@@ -68,7 +66,6 @@ function Login(props) {
                             </Button>
                         </Col>
                         <Col>
-                            {/*<Link to="/" className="nav-link">Cancel</Link>*/}
                             <Button
                                 variant="secondary"
                                 onClick={navigateToHomePage}
@@ -82,5 +79,3 @@ function Login(props) {
         </Modal>
     )
 }
-
-export default withRouter(Login)

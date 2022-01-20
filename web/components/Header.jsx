@@ -1,41 +1,35 @@
-import React from "react"
 import Navbar from "react-bootstrap/Navbar"
 import Nav from "react-bootstrap/Nav"
-import { Link } from "react-router-dom"
+import Link from "next/link"
 
 function Header(props) {
     return (
         <div className="header">
             <Navbar className="headernavbar">
                 <Nav.Item className="navitem">
-                    <Link to="/" className="nav-link">
-                        Home
+                    <Link href="/" className="nav-link">
+                        <a>Home</a>
                     </Link>
                 </Nav.Item>
                 <Nav.Item>
-                    <Link to="/search" className="nav-link">
-                        Search
+                    <Link href="/search" className="nav-link">
+                        <a>Search</a>
                     </Link>
                 </Nav.Item>
                 <Nav.Item>
                     {props.loggedIn ? (
-                        <Link to="/logout" className="nav-link">
-                            Logout
+                        <Link href="/logout" className="nav-link">
+                            <a>Logout</a>
                         </Link>
                     ) : (
-                        <Link to="/login" className="nav-link">
-                            Login
+                        <Link href="/login" className="nav-link">
+                            <a>Login</a>
                         </Link>
                     )}
                 </Nav.Item>
                 <Nav.Item>
                     <Link to="/shows" className="nav-link">
                         Shows
-                    </Link>
-                </Nav.Item>
-                <Nav.Item>
-                    <Link to="/about" className="nav-link">
-                        About Us
                     </Link>
                 </Nav.Item>
             </Navbar>

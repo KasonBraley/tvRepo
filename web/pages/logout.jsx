@@ -1,8 +1,7 @@
 import { useEffect } from "react"
 import axios from "axios"
-import { withRouter } from "react-router-dom"
 
-function Logout(props) {
+export default function Logout(props) {
     useEffect(() => {
         async function getData() {
             try {
@@ -26,5 +25,3 @@ function Logout(props) {
 
     return null
 }
-
-export default withRouter(Logout)
