@@ -1,7 +1,12 @@
+import { useContext } from "react"
 import axios from "axios"
 import { Button, Col, Form, Modal, Row } from "react-bootstrap"
 
+import { ShowContext } from "../context/showContext.jsx"
+
 export default function Login(props) {
+    let { toggleLoginStatus } = useContext(ShowContext)
+
     async function processLogin(event) {
         event.preventDefault()
 
@@ -13,7 +18,7 @@ export default function Login(props) {
             await axios.post(process.env.REACT_APP_SERVER_URL + "/login", {
                 data: { email, password },
             })
-            props.toggleLoginStatus(true, email)
+            toggleLoginStatus(true, email)
         } catch (error) {
             console.error(error)
         }
@@ -21,6 +26,7 @@ export default function Login(props) {
         navigateBack()
     }
 
+    // @@@props history probably wont work
     function navigateBack() {
         props.history.goBack()
     }

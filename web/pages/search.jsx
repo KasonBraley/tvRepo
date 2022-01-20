@@ -1,10 +1,14 @@
 import axios from "axios"
-import { useState } from "react"
+import { useContext, useState } from "react"
 
 import SearchForm from "../components/SearchForm.jsx"
 import SearchResult from "../components/SearchResult.jsx"
 
-export default function Search(props) {
+import { ShowContext } from "../context/showContext.jsx"
+
+export default function Search() {
+    let { addShow, errorHandler, loggedIn } = useContext(ShowContext)
+
     let [searchTitle, setSearchTitle] = useState("")
     let [searchResult, setSearchResult] = useState("")
 
@@ -25,7 +29,7 @@ export default function Search(props) {
             setSearchResult(results.data)
         } catch (error) {
             //TODO: better error handling; render an error
-            props.errorHandler(error)
+            errorHandler(error)
             setSearchTitle("")
             setSearchResult("")
         }
@@ -37,8 +41,8 @@ export default function Search(props) {
             {searchResult && (
                 <SearchResult
                     searchResult={searchResult}
-                    addShow={props.addShow}
-                    loggedIn={props.loggedIn}
+                    addShow={addShow}
+                    loggedIn={loggedIn}
                 />
             )}
         </div>

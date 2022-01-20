@@ -1,25 +1,30 @@
-import { useEffect } from "react"
+import { useContext, useEffect } from "react"
+import Link from "next/link"
 import Col from "react-bootstrap/Col"
 import Container from "react-bootstrap/Container"
 import Row from "react-bootstrap/Row"
-import Link from "next/link"
-import ShowCard from "../components/ShowCard.jsx"
 
-function Shows(props) {
+import ShowCard from "../components/ShowCard.jsx"
+import { ShowContext } from "../context/showContext.jsx"
+
+function Shows() {
+    let { deleteShow, loggedIn, getUserShows, myShows } =
+        useContext(ShowContext)
+
     useEffect(() => {
-        props.loggedIn && props.getUserShows()
+        loggedIn && getUserShows()
     })
 
     return (
         <Container className="shows">
             <Row>
-                {props.myShows.length > 0 ? (
-                    props.myShows.map((show, index) => {
+                {myShows.length > 0 ? (
+                    myShows.map((show, index) => {
                         return (
                             <Col key={index}>
                                 <ShowCard
                                     tvShow={show}
-                                    deleteShow={props.deleteShow}
+                                    deleteShow={deleteShow}
                                 />
                             </Col>
                         )

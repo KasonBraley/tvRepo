@@ -1,8 +1,12 @@
+import { useContext } from "react"
 import Navbar from "react-bootstrap/Navbar"
 import Nav from "react-bootstrap/Nav"
 import Link from "next/link"
 
-function Header(props) {
+import { ShowContext } from "../context/showContext.jsx"
+
+function Header() {
+    let { loggedIn } = useContext(ShowContext)
     return (
         <div className="header">
             <Navbar className="headernavbar">
@@ -17,7 +21,7 @@ function Header(props) {
                     </Link>
                 </Nav.Item>
                 <Nav.Item>
-                    {props.loggedIn ? (
+                    {loggedIn ? (
                         <Link href="/logout" className="nav-link">
                             <a>Logout</a>
                         </Link>
@@ -28,7 +32,7 @@ function Header(props) {
                     )}
                 </Nav.Item>
                 <Nav.Item>
-                    <Link to="/shows" className="nav-link">
+                    <Link href="/shows" className="nav-link">
                         Shows
                     </Link>
                 </Nav.Item>
