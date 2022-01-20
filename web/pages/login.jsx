@@ -17,7 +17,7 @@ export default function Login() {
         // todo: probably want a cross-component auth check utility
 
         try {
-            await axios.post(process.env.REACT_APP_SERVER_URL + "/login", {
+            await axios.post(process.env.NEXT_PUBLIC_SERVER_URL + "/login", {
                 data: { email, password },
             })
             toggleLoginStatus(true, email)

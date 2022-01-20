@@ -21,7 +21,7 @@ export default function Search() {
                 return
             }
 
-            const API = `${process.env.REACT_APP_SERVER_URL}/search/shows/${title}`
+            const API = `${process.env.NEXT_PUBLIC_SERVER_URL}/search/shows/${title}`
             const results = await axios.get(API)
             results.data.splice(0, -5)
 

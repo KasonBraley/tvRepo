@@ -49,13 +49,13 @@ export default function ShowProvider(props) {
     }
 
     async function put(newArray) {
-        const API = `${process.env.REACT_APP_SERVER_URL}/shows/$loggedInUser}`
+        const API = `${process.env.NEXT_PUBLIC_SERVER_URL}/shows/$loggedInUser}`
         await axios.put(API, newArray)
     }
 
     async function getUserShows() {
         try {
-            const API = `${process.env.REACT_APP_SERVER_URL}/shows/${loggedInUser}`
+            const API = `${process.env.NEXT_PUBLIC_SERVER_URL}/shows/${loggedInUser}`
             const results = await axios.get(API)
 
             setMyShows(results.data)
@@ -84,7 +84,7 @@ export default function ShowProvider(props) {
         loggedIn,
         loggedInUser,
         errorHandler,
-        myShows
+        myShows,
     }
 
     return (
