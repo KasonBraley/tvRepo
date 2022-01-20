@@ -8,7 +8,7 @@ const operationalApiController = require("./controllers/operationalApiController
 const tvSearchController = require("./controllers/tvSearchController")
 const tvShowsController = require("./controllers/tvShowsController")
 const userAuthController = require("./controllers/userAuthController")
-const PORT = process.env.PORT || 80
+const PORT = process.env.PORT || 5000
 
 mongoose.connect(process.env.CONNECTION_STRING, {
     useNewUrlParser: true,
