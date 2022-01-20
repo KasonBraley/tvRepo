@@ -2,7 +2,11 @@
 
 ## Overview
 
-Keep track of your favorite pieces of entertainment. Always be up to date with the latest releases.
+#### Keep track of your favorite pieces of entertainment. Always be up to date with the latest releases.
+
+Original idea and initial code comes from a [team project](https://github.com/cf-301-group-2021/entertainment-tracker) I worked on while at a coding bootcamp.
+
+This is my progression of the application so I can learn new technologies and implement new features.
 
 ## Installation
 
