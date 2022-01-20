@@ -6,6 +6,12 @@
     width: 18rem;
 }
 
+body {
+    max-width: f;
+    margin: 0 auto;
+    overflow-y: hidden;
+}
+
 div.footer {
     background-color: #badda6;
     width: 100%;

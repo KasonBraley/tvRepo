@@ -1,11 +1,13 @@
 import { useContext } from "react"
 import axios from "axios"
 import { Button, Col, Form, Modal, Row } from "react-bootstrap"
+import { useRouter } from "next/router"
 
 import { ShowContext } from "../context/showContext.jsx"
 
-export default function Login(props) {
+export default function Login() {
     let { toggleLoginStatus } = useContext(ShowContext)
+    let router = useRouter()
 
     async function processLogin(event) {
         event.preventDefault()
@@ -23,30 +25,18 @@ export default function Login(props) {
             console.error(error)
         }
 
-        navigateBack()
-    }
-
-    // @@@props history probably wont work
-    function navigateBack() {
-        props.history.goBack()
+        navigateToHomePage()
     }
 
     function navigateToHomePage() {
-        props.history.push("/")
+        router.push("/")
     }
 
-    /**
-     * On cancel click, navigate to /home.
-     * On login, process login with backend.
-     * On error, toast message, don't navigate.
-     * On success, navigate to /shows.
-     * @returns {JSX.Element}
-     */
     return (
         <Modal
             size="lg"
             show={true}
-            onHide={navigateBack}
+            onHide={navigateToHomePage}
             aria-labelledby="example-modal-sizes-title-lg"
         >
             <Modal.Header closeButton>

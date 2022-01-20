@@ -1,10 +1,12 @@
 import { useContext, useEffect } from "react"
 import axios from "axios"
+import { useRouter } from "next/router"
 
 import { ShowContext } from "../context/showContext.jsx"
 
-export default function Logout(props) {
+export default function Logout() {
     let { clearShowsState, loggedInUser, toggleLoginStatus } = useContext(ShowContext)
+    let router = useRouter()
 
     useEffect(() => {
         async function getData() {
@@ -23,9 +25,8 @@ export default function Logout(props) {
         getData()
     })
 
-    // @@@ props history won't work
     function navigateToHomePage() {
-        props.history.push("/")
+        router.push("/")
     }
 
     return null
