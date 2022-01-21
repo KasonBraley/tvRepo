@@ -1,8 +1,0 @@
-build
-coverage
-*.html
-node_modules/
-dist
-.yarn
-.pnp*
-.next

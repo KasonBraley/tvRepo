@@ -21,4 +21,4 @@ COPY --from=deps /app/node_modules ./node_modules/
 EXPOSE 3000
 
 # Specify what container executes
-ENTRYPOINT ["npm", "start"]
+ENTRYPOINT ["yarn", "dev"]
